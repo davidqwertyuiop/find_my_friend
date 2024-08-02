@@ -1,6 +1,8 @@
 import 'package:find_my_friend/loginscreen.dart';
 import 'package:flutter/material.dart';
 
+import 'app_colors/app_theme.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,7 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginScreen(),
+      debugShowCheckedModeBanner: false,
+      theme: MyAppThemes.lightTheme,
+      darkTheme: MyAppThemes.darkTheme,
+      themeMode: ThemeMode.system,
+      home: const SignInPage(),
     );
   }
 }
