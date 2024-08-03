@@ -1,11 +1,12 @@
 // ignore_for_file: library_private_types_in_public_api
 
 
+
 import 'package:flutter/material.dart';
 
 import '../home_page.dart';
-import 'my_password_field';
-
+import 'my_password_field.dart';
+import 'my_text_Field.dart';
 
 
 class RegisterPage extends StatefulWidget {
@@ -28,20 +29,19 @@ class _RegisterPageState extends State<RegisterPage> {
     _email.dispose();
     _password.dispose();
     _name.dispose();
-    super.dispose();}
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      
+        backgroundColor: const Color.fromARGB(255, 61, 55, 55),
         elevation: 0,
         leading: BackButton(
           onPressed: () {
             Navigator.pop(context);
           },
-         
-         
-         
         ),
       ),
       body: SafeArea(
@@ -60,34 +60,29 @@ class _RegisterPageState extends State<RegisterPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
-                           'Sign up',
-                            style: TextStyle(color: Colors.white10),
+                            "Register",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 23, 21, 21),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 34,
+                            ),
                           ),
                           const Text(
                             "Create new account to get started.",
-                            style: TextStyle(color: Colors.white24),
+                            style: TextStyle(color: Colors.grey),
                           ),
                           const SizedBox(
                             height: 50,
                           ),
-                           TextField(
-                            controller: _name,
-                            decoration: InputDecoration(
-                              labelText:'Name', 
-                             enabledBorder:OutlineInputBorder(borderSide: const BorderSide(color: Colors.grey, width: 1), 
-                            borderRadius: BorderRadius.circular(18)),
-                            focusedBorder:OutlineInputBorder(borderSide: const BorderSide(color: Colors.grey, width: 1,), 
-                            borderRadius: BorderRadius.circular(18)),
-                           ),obscureText: true,),
-                          TextField(
-                            controller: _email,
-                            decoration: InputDecoration(
-                            labelText: "Email",
-                            enabledBorder:OutlineInputBorder(borderSide: const BorderSide(color: Colors.grey, width: 1), 
-                            borderRadius: BorderRadius.circular(18)),
-                            focusedBorder:OutlineInputBorder(borderSide: const BorderSide(color: Colors.grey, width: 1,), 
-                            borderRadius: BorderRadius.circular(18)),
-                           ),obscureText: true,),
+                           MyTextField(
+                            hintText: "Name",
+                            inputType: TextInputType.name, textEditingController: _name,
+                          
+                          ),
+                           MyTextField(
+                            hintText: "email",
+                            inputType: TextInputType.emailAddress, textEditingController: _email,
+                          ),
                         
                           MyPasswordField(
                             isPasswordVisible: passwordVisibility,
@@ -105,11 +100,11 @@ class _RegisterPageState extends State<RegisterPage> {
                       children: [
                         Text(
                           "Already have an account? ",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(),
                         ),
                         Text(
                           "Sign in",
-                          style:TextStyle(
+                          style: TextStyle(
                             color: Colors.white
                           ),
                         ),
@@ -119,19 +114,19 @@ class _RegisterPageState extends State<RegisterPage> {
                       height: 20,
                     ),
                     TextButton(
-                     child: const Text("Register"),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => const HomeScreen())));
-                        },
-                        ),
+                          Navigator.push(context, MaterialPageRoute(builder: ((context) => const HomeScreen())));
+                        }, child:const Text("Register"),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
                         
-                      ]
-              )
-              )
-            )
-          ]
-        )
-      )
     );
+                        
   }
 }

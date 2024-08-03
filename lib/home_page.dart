@@ -24,7 +24,17 @@ class _HomeScreenState extends State<HomeScreen> {
       themeMode: _themeMode,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      home: const Scaffold()
+      home: Scaffold(
+        appBar: AppBar(
+          leading: 
+          BackButton(onPressed: () {Navigator.pop(context);},),
+          actions: <Widget>[
+            Icon(isDarkMode ? Icons.bedtime : Icons.bedtime_off, color: Colors.white,),
+            Switch(value: isDarkMode, onChanged: (isOn){_toggleTheme(isOn ? ThemeMode.dark : ThemeMode.light,);})
+          ],
+        ),
+        body: Center(),
+      )
     );
   }
 }

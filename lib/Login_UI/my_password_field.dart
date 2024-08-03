@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 
 
-import '../dart_files/constants.dart';
-
 class MyPasswordField extends StatefulWidget {
   const MyPasswordField({
     super.key,
@@ -32,7 +30,7 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
         controller: widget.textEditingController,
-        style: kBodyText.copyWith(
+        style: const TextStyle(
           color: Colors.white,
         ),
         obscureText: !isPasswordVisible,
@@ -52,8 +50,8 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
             ),
           ),
           contentPadding: const EdgeInsets.all(20),
-          hintText: translation(context).password,
-          hintStyle: kBodyText,
+          hintText: "password",
+          hintStyle: const TextStyle(color: Colors.white12),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: Colors.grey,
@@ -63,7 +61,7 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.white,
+              color: Colors.transparent,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(18),
