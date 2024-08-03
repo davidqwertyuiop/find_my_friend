@@ -1,16 +1,14 @@
 // ignore_for_file: library_private_types_in_public_api
 
-
-
 import 'package:flutter/material.dart';
 
 import '../home_page.dart';
 import 'my_password_field.dart';
-import 'my_text_Field.dart';
-
+import 'my_text_button.dart';
+import 'my_text_field.dart'; // Corrected file name casing
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key,  });
+  const RegisterPage({super.key});
 
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -18,11 +16,10 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   bool passwordVisibility = true;
-  
+
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _name = TextEditingController();
-  
 
   @override
   void dispose() {
@@ -50,9 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
             SliverFillRemaining(
               hasScrollBody: false,
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
                     Flexible(
@@ -71,53 +66,52 @@ class _RegisterPageState extends State<RegisterPage> {
                             "Create new account to get started.",
                             style: TextStyle(color: Colors.grey),
                           ),
-                          const SizedBox(
-                            height: 50,
+                          const Center(
+                            child: SizedBox(
+                              height: 50,
+                            ),
                           ),
-                           MyTextField(
+                          MyTextField(
                             hintText: "Name",
-                            inputType: TextInputType.name, textEditingController: _name,
-                          
+                            inputType: TextInputType.name,
+                            textEditingController: _name,
                           ),
-                           MyTextField(
-                            hintText: "email",
-                            inputType: TextInputType.emailAddress, textEditingController: _email,
+                          MyTextField(
+                            hintText: "Email",
+                            inputType: TextInputType.emailAddress,
+                            textEditingController: _email,
                           ),
-                        
                           MyPasswordField(
                             isPasswordVisible: passwordVisibility,
                             onTap: () {
                               setState(() {
                                 passwordVisibility = !passwordVisibility;
                               });
-                            }, textEditingController: _password,
-                          )
+                            },
+                            textEditingController: _password,
+                          ),
                         ],
                       ),
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Already have an account? ",
-                          style: TextStyle(),
-                        ),
-                        Text(
-                          "Sign in",
-                          style: TextStyle(
-                            color: Colors.white
-                          ),
-                        ),
-                      ],
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    TextButton(
-                      onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: ((context) => const HomeScreen())));
-                        }, child:const Text("Register"),
-                    ),
+                    MyTextButton(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const HomeScreen())),
+                        );
+                      },
+                      buttonName: 'Register', 
+                      textColor: Colors.indigo, 
+                      bgColor:const Color.fromARGB(255, 63, 57, 57), 
+                      onPressed: () { Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const HomeScreen())));  } ,
+                      ),
                   ],
                 ),
               ),
@@ -125,8 +119,6 @@ class _RegisterPageState extends State<RegisterPage> {
           ],
         ),
       ),
-                        
     );
-                        
   }
 }

@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Switch(value: isDarkMode, onChanged: (isOn){_toggleTheme(isOn ? ThemeMode.dark : ThemeMode.light,);})
           ],
         ),
-        body: Center(),
+        body: const Center(),
       )
     );
   }

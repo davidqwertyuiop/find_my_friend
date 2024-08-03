@@ -31,7 +31,7 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
       child: TextField(
         controller: widget.textEditingController,
         style: const TextStyle(
-          color: Colors.white,
+          color: Colors.black,
         ),
         obscureText: !isPasswordVisible,
         keyboardType: TextInputType.text,
@@ -51,17 +51,17 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
           ),
           contentPadding: const EdgeInsets.all(20),
           hintText: "password",
-          hintStyle: const TextStyle(color: Colors.white12),
+          hintStyle: const TextStyle(color: Colors.black54),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.grey,
+              color: Color.fromARGB(255, 27, 26, 26),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(18),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.transparent,
+              color: Colors.black54,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(18),
