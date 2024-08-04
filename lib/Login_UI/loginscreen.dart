@@ -32,7 +32,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 40, 60, 56),
+        backgroundColor: const Color.fromARGB(255, 91, 153, 105),
         elevation: 0,
       ),
       body: Center(
@@ -49,7 +49,7 @@ class _SignInPageState extends State<SignInPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Image.asset(
-                        'assets/images/image.png', // Replace with your image asset
+                        'assets/images/image.png',
                         height: 200,
                       ),
                       const SizedBox(height: 40),
