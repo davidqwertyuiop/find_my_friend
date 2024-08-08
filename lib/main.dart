@@ -1,7 +1,7 @@
 import 'package:find_my_friend/Login_UI/loginscreen.dart';
 import 'package:flutter/material.dart';
 
-import 'app_colors/theme.dart';
+import 'app_colors/themes_dart.dart';
 
 void main() {
   runApp(const MyApp());
