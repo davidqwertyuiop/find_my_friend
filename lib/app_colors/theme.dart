@@ -6,8 +6,8 @@ ThemeData darkTheme = ThemeData(
   iconTheme: IconThemeData(color: Colors.black),
   titleTextStyle: TextStyle(color: Colors.black, fontSize: 12)),
   colorScheme: ColorScheme.light(
-    surface: Colors.grey[300]!,
-    primary: Colors.grey[200]!,
-    secondary:Colors.grey[300]!, 
+    surface: Colors.blueGrey,
+    secondary: const Color.fromARGB(255, 207, 202, 202),
+    tertiary:Colors.grey[850]!,
   ),
 );
