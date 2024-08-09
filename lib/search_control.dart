@@ -18,7 +18,7 @@ class  SearchControlState extends State <SearchControl> with SingleTickerProvide
   void initState(){
     super.initState();
 
-    animController = AnimationController(duration: const Duration(milliseconds: 1000,), vsync: this);
+    animController = AnimationController(duration: const Duration(milliseconds: 200,), vsync: this);
     final curvedAnimation = CurvedAnimation(parent: animController, curve: Curves.easeOutExpo);
     animation = Tween<double>(begin: 0, end: 0).animate(curvedAnimation)
     ..addListener((){setState(() {
@@ -32,7 +32,7 @@ class  SearchControlState extends State <SearchControl> with SingleTickerProvide
     double screenWidth = MediaQuery.of(context).size.width;
 
     // Set the end value of the animation to 80% of the screen width
-    double searchBarWidth = screenWidth * 0.8;
+    double searchBarWidth = screenWidth * 0.6;
     
     animation = Tween<double>(begin: 0, end: searchBarWidth).animate(animController);
 
