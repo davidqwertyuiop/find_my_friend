@@ -32,7 +32,7 @@ class  SearchControlState extends State <SearchControl> with SingleTickerProvide
     double screenWidth = MediaQuery.of(context).size.width;
 
     // Set the end value of the animation to 80% of the screen width
-    double searchBarWidth = screenWidth * 0.6;
+    double searchBarWidth = screenWidth * 0.57;
     
     animation = Tween<double>(begin: 0, end: searchBarWidth).animate(animController);
 
@@ -41,6 +41,7 @@ class  SearchControlState extends State <SearchControl> with SingleTickerProvide
     height: 50,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisSize: MainAxisSize.max,
       children: [
         Container(width: animation.value, height: 50,
         decoration: const BoxDecoration(color: Color.fromARGB(255, 120, 117, 117), borderRadius: BorderRadius.only(topLeft: Radius.circular(50), bottomLeft: Radius.circular(50)) ),
